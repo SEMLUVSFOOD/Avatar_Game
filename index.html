@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Avatar Line Guesser</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div id="header">
+    <div id="title">Avatar Line Guesser</div>
+    <div id="subtitle">Guess the episode from a single line</div>
+  </div>
+
+  <div id="sentence-container">"Loading..."</div>
+
+  <input id="guess-input" list="episode-names" placeholder="Guess the episode..." />
+  <datalist id="episode-names"></datalist>
+
+  <button id="guess-button">Guess</button>
+  <button id="try-again-button" style="display:none">Try Again</button>
+
+  <div id="score">Score: 0</div>
+  <div id="high-score">High Score: 0</div>
+  <div id="feedback"></div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f8ff;
+  }
+  
+  #header {
+    margin-bottom: 30px;
+  }
+  
+  #title {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  
+  #subtitle {
+    font-size: 1.2em;
+    color: #555;
+  }
+  
+  #sentence-container {
+    font-size: 1.5em;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #guess-input {
+    width: 60%;
+    padding: 10px;
+    font-size: 1em;
+    margin-top: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1em;
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  #score, #high-score, #feedback {
+    margin-top: 20px;
+    font-size: 1.2em;
+  }
+  
