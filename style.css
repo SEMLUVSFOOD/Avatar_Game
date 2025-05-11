@@ -2,7 +2,13 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     padding: 20px;
-    background-color: #f0f8ff;
+    background-color: #282828;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
   }
   
   #header {
@@ -16,7 +22,7 @@ body {
   
   #subtitle {
     font-size: 1.2em;
-    color: #555;
+    color: #c4c4c4;
   }
   
   #sentence-container {
@@ -24,6 +30,7 @@ body {
     margin: 30px auto;
     padding: 20px;
     background-color: #ffffff;
+    color: black;
     border-radius: 8px;
     width: 80%;
     max-width: 600px;
@@ -33,15 +40,18 @@ body {
   #guess-input {
     width: 60%;
     padding: 10px;
-    font-size: 1em;
+    font-size: 1.5em;
     margin-top: 20px;
+    border-radius: 8px;
   }
   
   button {
     padding: 10px 20px;
-    font-size: 1em;
+    font-size: 1.5em;
     margin: 10px;
     cursor: pointer;
+    border-radius: 8px;
+    background-color: rgb(63, 165, 63);
   }
   
   #score, #high-score, #feedback {
@@ -49,3 +59,20 @@ body {
     font-size: 1.2em;
   }
   
+
+  .score {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 20px;
+  }
+
+  .answeringDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px;
+  }

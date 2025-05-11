@@ -61,17 +61,24 @@ function updateScore() {
   if (score > highScore) {
     localStorage.setItem(highScoreKey, score);
     highScoreDisplay.innerText = `High Score: ${score}`;
-    highScoreDisplay.style.color = "red";
   } else {
     highScoreDisplay.innerText = `High Score: ${highScore}`;
   }
+  updateProgressBar(); 
 }
+
+function updateProgressBar() {
+    const progressBar = document.querySelector(".progressToHighScore");
+    let highScore = Number(localStorage.getItem(highScoreKey)) || 1; // prevent divide by 0
+    let percentage = Math.min((score / highScore) * 100, 100);
+    progressBar.style.width = `${percentage}%`;
+}  
 
 function resetGame() {
   score = 0;
   showRandomSentence();
   scoreDisplay.innerText = `Score: ${score}`;
-  highScoreDisplay.style.color = "black";
+  updateProgressBar(); 
 }
 
 guessButton.addEventListener("click", checkGuess);

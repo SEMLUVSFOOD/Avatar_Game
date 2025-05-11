@@ -9,20 +9,30 @@
 </head>
 <body>
   <div id="header">
-    <div id="title">Avatar Line Guesser</div>
-    <div id="subtitle">Guess the episode from a single line</div>
+    <div id="title">Avatar Quote Guesser</div>
+    <div id="subtitle">Guess the episode from a quote!</div>
   </div>
 
   <div id="sentence-container">"Loading..."</div>
 
-  <input id="guess-input" list="episode-names" placeholder="Guess the episode..." />
-  <datalist id="episode-names"></datalist>
+  <div class="answeringDiv">
+    <input id="guess-input" list="episode-names" placeholder="Guess the episode..." />
+    <datalist id="episode-names"></datalist>
+  
+    <button id="guess-button">Guess</button>
+    <button id="try-again-button" style="display:none">Try Again</button>  
 
-  <button id="guess-button">Guess</button>
-  <button id="try-again-button" style="display:none">Try Again</button>
+    <div id="feedback"></div>
+  </div>
 
-  <div id="score">Score: 0</div>
-  <div id="high-score">High Score: 0</div>
-  <div id="feedback"></div>
+
+  <div class="progress-container" style="width: 60%; background: #ddd; height: 20px;">
+    <div class="score">
+        <div id="score">Score: 0</div>
+        <div id="high-score">High Score: 0</div>
+    </div>
+    <div class="progressToHighScore" style="height: 100%; background: #4caf50; width: 0%; transition: width 0.3s;"></div>
+  </div>
+  
 </body>
 </html>
