@@ -21,16 +21,21 @@ function populateEpisodeList() {
 }
 
 function showRandomSentence() {
-  let keys = Object.keys(sentences);
-  currentEpisode = keys[Math.floor(Math.random() * keys.length)];
-  let line = sentences[currentEpisode][Math.floor(Math.random() * sentences[currentEpisode].length)];
-  sentenceContainer.innerText = `"${line}"`;
-  input.value = "";
-  input.style.display = "block";
-  guessButton.style.display = "block";
-  tryAgainButton.style.display = "none";
-  feedback.innerText = "";
+    let keys = Object.keys(sentences);
+    currentEpisode = keys[Math.floor(Math.random() * keys.length)];
+    
+    let episodeQuotes = sentences[currentEpisode];
+    let randomIndex = Math.floor(Math.random() * episodeQuotes.length);
+    let line = episodeQuotes[randomIndex];
+    
+    sentenceContainer.innerText = `"${line}"`;
+    input.value = "";
+    input.style.display = "block";
+    guessButton.style.display = "block";
+    tryAgainButton.style.display = "none";
+    feedback.innerText = "";
 }
+  
 
 function checkGuess() {
   let guess = input.value;
