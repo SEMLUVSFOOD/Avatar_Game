@@ -51,6 +51,7 @@ body {
     cursor: pointer;
     border-radius: 8px;
     background-color: rgb(63, 165, 63);
+    color: black;
   }
   
   #score, #high-score, #feedback {
@@ -75,3 +76,19 @@ body {
     width: 100%;
     margin: 20px;
   }
+
+  .progress-container {
+    width: 60%; 
+    background: #ddd; 
+    height: 20px;
+  }
+
+
+  @media (max-width: 1000px) { 
+    #guess-input {
+        width: 100%;
+    }
+    .progress-container {
+        width: 100%; 
+    }
+}
