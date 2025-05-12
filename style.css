@@ -83,6 +83,13 @@ body {
     height: 20px;
   }
 
+  .myAdvert {
+    color: white;
+  }
+  .myAdvert:hover {
+    color: rgb(194, 194, 194);
+    transition: 0.3s;
+  }
 
   @media (max-width: 1000px) { 
     #guess-input {
