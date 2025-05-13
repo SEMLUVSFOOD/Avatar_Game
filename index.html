@@ -3,7 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Avatar Quote Guesser</title>
+  <title>Avatar Quote Guesser | Guess the Episode from Avatar: The Last Airbender</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Play the Avatar Quote Guesser game! Test your Avatar: The Last Airbender knowledge by guessing which episode and character said each quote.">
+  <meta name="keywords" content="Avatar The Last Airbender, quote guessing game, Avatar quiz, episode game, character guessing">
+  <meta name="author" content="Sem Sannen">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Avatar Quote Guesser" />
+  <meta property="og:description" content="Can you guess the Avatar: The Last Airbender episode and character from the quote? Try now!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://avatarguessr.lol/" /> 
+  <meta property="og:image" content="https://avatarguessr.lol/icon.png" /> <!-- Replace with actual image -->
+
   <link rel="stylesheet" href="style.css"/>
   <script defer src="script.js"></script>
   <link rel="icon" href="./favicon.ico" type="image/x-icon">
@@ -15,13 +28,11 @@
   </div>
 
   <div id="hard-mode-toggle" style="margin-top: 20px; display: flex; align-items: center; gap: 10px;">
-    <!-- Only the slider is wrapped in a label -->
     <label class="toggle-switch" for="hard-mode-checkbox">
       <input type="checkbox" id="hard-mode-checkbox">
       <span class="slider"></span>
     </label>
-  
-    <!-- Text and info icon are now outside the label -->
+
     <span class="label-text">
       Hard Mode
       <span class="info-icon" tabindex="0">i
@@ -34,7 +45,7 @@
       </span>
     </span>
   </div>
-  
+
   <div id="sentence-container">"Loading..."</div>
 
   <div class="answeringDiv">
@@ -45,13 +56,12 @@
         <input id="character-input" list="character-names" placeholder="Guess the character..." />
         <datalist id="character-names"></datalist>
     </div>
-    
-      <button id="guess-button">Guess</button>
+
+    <button id="guess-button">Guess</button>
     <button id="try-again-button" style="display:none">Try Again</button>  
 
     <div id="feedback"></div>
   </div>
-
 
   <div class="progress-container">
     <div class="progressToHighScore" style="height: 100%; background: #4caf50; width: 0%; transition: width 0.3s;"></div>
@@ -60,7 +70,7 @@
         <div id="high-score">High Score: 0</div>
     </div>
   </div>
-  
+
   <p> <br> <br> <br> <br> <br> Made by <a class="myAdvert" target="_blank" href="https://www.linkedin.com/in/semsannen/"> Sem Sannen </a></p>
 </body>
 </html>
