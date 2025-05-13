@@ -155,10 +155,72 @@ body {
   }
 
   
-
-
-
+  .info-icon {
+    position: relative;
+    display: inline-block;
+    margin-left: 8px;
+    background-color: #ddd;
+    color: #333;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+    text-align: center;
+    cursor: pointer;
+  }
   
+  .tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+    width: max-content;
+    max-width: 90vw;
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    padding: 10px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 999;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.3s;
+    pointer-events: none;
+    white-space: normal;
+    box-sizing: border-box;
+  }
+  
+  /* Prevent it from overflowing left/right */
+  .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+  }  
+  
+  /* Show tooltip on hover (desktop) */
+  .info-icon:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  /* Also show tooltip on focus/click (mobile/tablet) */
+  .info-icon:focus .tooltip-text,
+  .info-icon:active .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }  
+
+
+
   @media (max-width: 1000px) { 
     #guess-input {
         width: 100%;
@@ -170,3 +232,18 @@ body {
         width: 100%; 
     }
 }
+
+@media (max-width: 600px) {
+    .tooltip-text {
+      top: auto;
+      bottom: 125%;
+      transform: translateX(-75%);
+    }
+  
+    .tooltip-text::after {
+      top: 100%;
+      bottom: auto;
+      border-color: #333 transparent transparent transparent;
+    }
+  }
+  

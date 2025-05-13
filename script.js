@@ -61,40 +61,47 @@ function buildQuotePool() {
 }
 
 function showRandomSentence() {
-  if (unusedQuotes.length === 0) {
-    unusedQuotes = [...allQuotes];
-  }
-
-  const randomIndex = Math.floor(Math.random() * unusedQuotes.length);
-  const { episode, line } = unusedQuotes.splice(randomIndex, 1)[0];
-
-  currentEpisode = episode;
-
-  if (hardModeCheckbox.checked) {
-    let parts = line.split(":");
-    if (parts.length >= 2) {
-      currentCharacter = parts[0].trim();
-      currentLine = parts.slice(1).join(":").trim();
-      sentenceContainer.innerText = `"${currentLine}"`;
-      characterGuessDiv.style.display = "block";
-    } else {
-      currentCharacter = "Unknown";
-      currentLine = line;
-      sentenceContainer.innerText = `"${currentLine}"`;
+    if (unusedQuotes.length === 0) {
+      unusedQuotes = [...allQuotes];
     }
-  } else {
-    currentLine = line;
-    sentenceContainer.innerText = `"${line}"`;
-    characterGuessDiv.style.display = "none";
-  }
-
-  input.value = "";
-  characterInput.value = "";
-  input.style.display = "block";
-  guessButton.style.display = "block";
-  tryAgainButton.style.display = "none";
-  feedback.innerText = "";
-}
+  
+    const randomIndex = Math.floor(Math.random() * unusedQuotes.length);
+    const { episode, line } = unusedQuotes.splice(randomIndex, 1)[0];
+  
+    currentEpisode = episode;
+  
+    if (hardModeCheckbox.checked) {
+      let parts = line.split(":");
+      if (parts.length >= 2) {
+        currentCharacter = parts[0].trim();
+        currentLine = parts.slice(1).join(":").trim();
+        sentenceContainer.innerText = `"${currentLine}"`;
+        characterGuessDiv.style.display = "block";
+      } else {
+        currentCharacter = "Unknown";
+        currentLine = line;
+        sentenceContainer.innerText = `"${currentLine}"`;
+      }
+    } else {
+      let parts = line.split(":");
+      if (parts.length >= 2) {
+        currentCharacter = parts[0].trim();
+        currentLine = parts.slice(1).join(":").trim();
+        sentenceContainer.innerText = `${currentCharacter}: "${currentLine}"`;
+      } else {
+        currentLine = line;
+        sentenceContainer.innerText = `"${line}"`;
+      }
+      characterGuessDiv.style.display = "none";
+    }
+  
+    input.value = "";
+    characterInput.value = "";
+    input.style.display = "block";
+    guessButton.style.display = "block";
+    tryAgainButton.style.display = "none";
+    feedback.innerText = "";
+}  
 
 function checkGuess() {
   const episodeGuess = input.value.trim();

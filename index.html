@@ -14,12 +14,25 @@
     <div id="subtitle">Guess the episode from a quote!</div>
   </div>
 
-  <div id="hard-mode-toggle" style="margin-top: 20px;">
-    <label class="toggle-switch">
+  <div id="hard-mode-toggle" style="margin-top: 20px; display: flex; align-items: center; gap: 10px;">
+    <!-- Only the slider is wrapped in a label -->
+    <label class="toggle-switch" for="hard-mode-checkbox">
       <input type="checkbox" id="hard-mode-checkbox">
       <span class="slider"></span>
-      <span class="label-text">Hard Mode</span>
     </label>
+  
+    <!-- Text and info icon are now outside the label -->
+    <span class="label-text">
+      Hard Mode
+      <span class="info-icon" tabindex="0">i
+        <span class="tooltip-text">
+          <strong>Hard Mode:</strong><br>
+          You must guess both the episode <em>and</em> the character who said the quote. The character's name is hidden.<br><br>
+          <strong>Easy Mode:</strong><br>
+          Only guess the episode. The speaker is shown.
+        </span>
+      </span>
+    </span>
   </div>
   
   <div id="sentence-container">"Loading..."</div>
