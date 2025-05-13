@@ -60,6 +60,7 @@ body {
     border-radius: 8px;
     background-color: rgb(63, 165, 63);
     color: black;
+    border: none;
   }
   
   #score, #high-score, #feedback {
